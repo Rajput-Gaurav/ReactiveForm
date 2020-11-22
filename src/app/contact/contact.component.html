@@ -1,0 +1,45 @@
+<div class="container">
+
+        <form [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Username</label>
+                <input type="text" class="form-control" formControlName="username" >
+                <small class="text-danger"
+                *ngIf="!myReactiveForm.get('username').valid &&
+                        myReactiveForm.get('username').touched">
+                    Please Enter Username.
+                </small>
+              </div>
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" formControlName="email" >
+                <small class="text-danger"
+                *ngIf="!myReactiveForm.get('email').valid &&
+                        myReactiveForm.get('email').touched">
+                  Please Enter Valid Email.
+                </small>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Select Course</label>
+                <select class="form-control" formControlName="select" >
+                  <option>Angular</option>
+                  <option>NodeJS</option>
+                  <option>React</option>
+                  <option>Vue</option>
+                  <option>Ionic</option>
+                </select>
+              </div>
+
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" formControlName="password" >
+            </div>
+
+    
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    
+</div>
